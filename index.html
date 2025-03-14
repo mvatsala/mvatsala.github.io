@@ -6,130 +6,213 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="hash-styles.css"> 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
 
-html {
-    scroll-behavior: smooth;
-}
+        @font-face {
+            font-family: 'Felipa'; 
+            src: url('fonts/Felipa/Felipa-Regular.ttf') format('truetype');
+        }
 
-@font-face {
-    font-family: 'Felipa'; 
-    src: url('fonts/Felipa/Felipa-Regular.ttf') format('truetype');
-}
+        body {
+            font-family: 'Felipa', serif;
+            background-image: url('ptbg.jpeg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
 
-body {
+        .intro-box {
+            font-family: 'Cinzel Decorative', serif;
+            width: 60%;
+            margin: 200px auto;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 3px solid goldenrod;
+        }
+
+        #enterButton, #nextSectionButton {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 18px;
+            padding: 12px 24px;
+            background-color: #3a2a1c;
+            color: #f8e1c4;
+            border: 2px solid #f8e1c4;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            margin-top: 30px;
+        }
+
+        #enterButton:hover, #nextSectionButton:hover {
+            background-color: #f8e1c4;
+            color: #3a2a1c;
+            transform: scale(1.1);
+        }
+
+        section {
+            width: 60%;
+            margin: 100px auto;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 3px solid goldenrod;
+            display: none; /* Hide sections initially */
+        }
+
+        .deck {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            width: 200px;
+            height: 300px;
+            position: relative;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .card-face {
     font-family: 'Felipa', serif;
-    background-image: url('ptbg.jpeg'); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    margin: 0;
-    padding: 0;
 }
 
-.intro-box {
-    font-family: 'Cinzel Decorative', serif;
-    width: 60%;
-    margin: 200px auto;
-    padding: 20px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.3);
-    border: 3px solid goldenrod;
-}
+        .front {
+            background: url('deck/cb.png') no-repeat center/cover;
+        }
 
-#enterButton, #nextSectionButton {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 18px;
-    padding: 12px 24px;
-    background-color: #3a2a1c;
-    color: #f8e1c4;
-    border: 2px solid #f8e1c4;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    margin-top: 30px;
-}
+        .back {
+            transform: rotateY(180deg);
+        }
 
-#enterButton:hover, #nextSectionButton:hover {
-    background-color: #f8e1c4;
-    color: #3a2a1c;
-    transform: scale(1.1);
+        .flipped {
+    transform: rotateY(180deg);
 }
-
-section {
-    width: 60%;
-    margin: 100px auto;
-    padding: 20px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.3);
-    border: 3px solid goldenrod;
+section img,
+section video,
+section iframe,
+section embed,
+section object {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Ensures full center alignment */
 }
-
-#secondPage, #nextSection {
-    display: none; /* Hide sections initially */
-}
-
-.parent {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-    width: 100%;
-}
-
-.child {
-    width: 100%;
-    text-align: center;
-}
-
     </style>
 </head>
 <body>
 
 <div class="intro-box">
-   <h1> Hi, this is Vatsala.<br> Welcome to my World!</h1>
-    <br> 
+    <h1> Hi, this is Vatsala.<br> Welcome to my World!</h1>
     <button id="enterButton">Enter</button>
 </div>
 
 <section id="secondPage">
-    <h1> Life is like a game of cards, your skills and presence of mind are crucial, but it remains on chance, that what cards will you get.<br><br><br> 
-    Hence my portfolio is also presented as a deck of cards! 
-    </h1>
-    <br>
+    <h1> Life is like a game of cards... Hence, my portfolio is presented as a deck of cards! </h1>
     <button id="nextSectionButton">That's so cool!</button>
 </section>
 
 <section id="nextSection">
-    Hello!
+    <div id="deck" class="deck">
+    
+        <!-- Spades -->
+        <div class="card" data-card="aos">
+            <img class="card-face front" src="deck/aos.png" alt="Ace of Spades">
+            <img class="card-face back" src="deck/cb.png" alt="Card Back">
+        </div>
+        <div class="card" data-card="kos">
+            <img class="card-face front" src="deck/kos.png" alt="King of Spades">
+            <img class="card-face back" src="deck/cb.png" alt="Card Back">
+        </div>
+        <div class="card" data-card="qos">
+            <img class="card-face front" src="deck/qos.png" alt="Queen of Spades">
+            <img class="card-face back" src="deck/cb.png" alt="Card Back">
+        </div>
+        <div class="card" data-card="jos">
+            <img class="card-face front" src="deck/jos.png" alt="Jack of Spades">
+            <img class="card-face back" src="deck/cb.png" alt="Card Back">
+        </div>
+    
+        <!-- Hearts -->
+        <div class="card" data-card="aoh">
+            <img class="card-face front" src="deck/aoh.png" alt="Ace of Hearts">
+            <img class="card-face back" src="deck/cb.png" alt="Card Back">
+        </div>
+        <div class="card" data-card="koh">
+            <img class="card-face front" src="deck/koh.png" alt="King of Hearts">
+            <img class="card-face back" src="deck/cb.png" alt="Card Back">
+        </div>
+        <div class="card" data-card="qoh">
+            <img class="card-face front" src="deck/qoh.png" alt="Queen of Hearts">
+            <img class="card-face back" src="deck/cb.png" alt="Card Back">
+        </div>
+        <div class="card" data-card="joh">
+            <img class="card-face front" src="deck/joh.png" alt="Jack of Hearts">
+            <img class="card-face back" src="deck/cb.png" alt="Card Back">
+        </div>
+    
+        <!-- Clubs -->
+        <div class="card" data-card="aoc">
+            <img class="card-face front" src="deck/aoc.png" alt="Ace of Clubs">
+            <img class="card-face back" src="deck/cb.png" alt="Card Back">
+        </div>
+        <div class="card" data-card="koc">
+            <img class="card-face front" src="deck/koc.png" alt="King of Clubs">
+            <img class="card-face back" src="deck/cb.png" alt="Card Back">
+        </div>
+        <div class="card" data-card="qoc">
+            <img class="card-face front" src="deck/qoc.png" alt="Queen of Clubs">
+            <img class="card-face back" src="deck/cb.png" alt="Card Back">
+        </div>
+        <div class="card" data-card="joc">
+            <img class="card-face front" src="deck/joc.png" alt="Jack of Clubs">
+            <img class="card-face back" src="deck/cb.png" alt="Card Back">
+        </div>
+    
+        <!-- Diamonds -->
+        <div class="card" data-card="aod">
+            <img class="card-face front" src="deck/aod.png" alt="Ace of Diamonds">
+            <img class="card-face back" src="deck/cb.png" alt="Card Back">
+        </div>
+        <div class="card" data-card="kod">
+            <img class="card-face front" src="deck/kod.png" alt="King of Diamonds">
+            <img class="card-face back" src="deck/cb.png" alt="Card Back">
+        </div>
+        <div class="card" data-card="qod">
+            <img class="card-face front" src="deck/qod.png" alt="Queen of Diamonds">
+            <img class="card-face back" src="deck/cb.png" alt="Card Back">
+        </div>
+        <div class="card" data-card="jod">
+            <img class="card-face front" src="deck/jod.png" alt="Jack of Diamonds">
+            <img class="card-face back" src="deck/cb.png" alt="Card Back">
+        </div>
+    </div>
 </section>
 
-<section id="design" class="parent" style="width: 90%; max-width: 800px; margin: auto; display: flex; flex-direction: column; gap: 10px; align-items: center;">
-    <section class="child" style="width: 100%; max-width: inherit;">
-        <iframe src="Design page/French Punducherry News Paper.pdf" style="width: 100%; height: 600px; object-fit: contain;"></iframe>
-    </section>
-    <section class="child" style="width: 100%; max-width: inherit;">
-        <iframe src="Design page/Scribus.pdf" style="width: 100%; height: 600px; object-fit: contain;"></iframe>
-    </section>
-    <section class="child" style="width: 100%; max-width: inherit;">
-        <img src="Design page/KB.png" style="width: 100%; height: auto; max-height: 600px; object-fit: contain;">
-    </section>
-</section>
-
-<section id="photo-av" class="parent" style="width: 90%; max-width: 800px; margin: auto; display: flex; flex-direction: column; gap: 10px; align-items: center;">
-    <section class="child" style="width: 100%; max-width: inherit;">
-        <iframe src="PhotoAV/Photography Portfolio.pdf" style="width: 100%; height: 600px; object-fit: contain;"></iframe>
-    </section>
-    <section id="photo-av" class="parent" style="width: 90%; max-width: 800px; margin: auto; display: flex; flex-direction: column; gap: 10px; align-items: center;">
-    <video width="60%" controls>
-        <source src="PhotoAV/Finalmojo.mp4" type="video/mp4">
-    </section>
-    </video>
-</section>
 
 <script>
     document.getElementById("enterButton").addEventListener("click", function() {
@@ -141,8 +224,11 @@ section {
         document.getElementById("nextSection").style.display = "block";
         document.getElementById("nextSection").scrollIntoView({ behavior: "smooth" });
     });
+
+   
 </script>
 
 </body>
 </html>
+
 
