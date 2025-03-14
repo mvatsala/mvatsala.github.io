@@ -102,7 +102,7 @@
 }
 
         .front {
-            background: url('deck/CB.png') no-repeat center/cover;
+            background: url('deck/cb.png') no-repeat center/cover;
         }
 
         .back {
@@ -141,8 +141,8 @@ section object {
     
         <!-- Spades -->
         <div class="card" data-card="aos">
-            <img class="card-face front" src="deck/AoS.png" alt="Ace of Spades">
-            <img class="card-face back" src="deck/CB.png" alt="Card Back">
+                <img class="card-face front" src="deck/AoS.png" alt="Ace of Spades">
+                <img class="card-face back" src="deck/CB.png" alt="Card Back">
         </div>
         <div class="card" data-card="kos">
             <img class="card-face front" src="deck/KoS.png" alt="King of Spades">
@@ -153,7 +153,7 @@ section object {
             <img class="card-face back" src="deck/CB.png" alt="Card Back">
         </div>
         <div class="card" data-card="jos">
-            <img class="card-face front" src="deck/JoS.png" alt="Jake of Spades">
+            <img class="card-face front" src="deck/JoS.png" alt="Jack of Spades">
             <img class="card-face back" src="deck/CB.png" alt="Card Back">
         </div>
     
@@ -163,21 +163,23 @@ section object {
             <img class="card-face back" src="deck/CB.png" alt="Card Back">
         </div>
         <div class="card" data-card="koh">
-            <img class="card-face front" src="deck/KoH.png" alt="King of Hearts">
-            <img class="card-face back" src="deck/CB.png" alt="Card Back">
+            <a href="#design">
+                <img class="card-face front" src="deck/KoH.png" alt="King of Hearts">
+                <img class="card-face back" src="deck/CB.png" alt="Card Back">
+            </a>
         </div>
         <div class="card" data-card="qoh">
             <img class="card-face front" src="deck/QoH.png" alt="Queen of Hearts">
             <img class="card-face back" src="deck/CB.png" alt="Card Back">
         </div>
         <div class="card" data-card="joh">
-            <img class="card-face front" src="deck/JoH.png" alt="Jake of Hearts">
+            <img class="card-face front" src="deck/JoH.png" alt="Jack of Hearts">
             <img class="card-face back" src="deck/CB.png" alt="Card Back">
         </div>
     
         <!-- Clubs -->
-        <div class="card" data-card="AoC">
-            <img class="card-face front" src="deck/aoc.png" alt="Ace of Clubs">
+        <div class="card" data-card="aoc">
+            <img class="card-face front" src="deck/AoC.png" alt="Ace of Clubs">
             <img class="card-face back" src="deck/CB.png" alt="Card Back">
         </div>
         <div class="card" data-card="koc">
@@ -189,7 +191,7 @@ section object {
             <img class="card-face back" src="deck/CB.png" alt="Card Back">
         </div>
         <div class="card" data-card="joc">
-            <img class="card-face front" src="deck/JoC.png" alt="Jake of Clubs">
+            <img class="card-face front" src="deck/JoC.png" alt="Jack of Clubs">
             <img class="card-face back" src="deck/CB.png" alt="Card Back">
         </div>
     
@@ -207,12 +209,160 @@ section object {
             <img class="card-face back" src="deck/CB.png" alt="Card Back">
         </div>
         <div class="card" data-card="jod">
-            <img class="card-face front" src="deck/JoD.png" alt="Jake of Diamonds">
+            <img class="card-face front" src="deck/JoD.png" alt="Jack of Diamonds">
             <img class="card-face back" src="deck/CB.png" alt="Card Back">
         </div>
     </div>
 </section>
 
+
+<!-- Ace of Spades Section -->
+
+<section id="aos-section" class="card-section">
+    <h1>Ace of Spades</h1>
+    <p>This is the placeholder content for the Ace of Spades section.</p>
+    <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
+        Back to Deck
+    </button>
+</section>
+
+<!-- King of Spades Section -->
+<section id="kos-section" class="card-section">
+    <h1>King of Spades</h1>
+    <p>This is the placeholder content for the King of Spades section.</p>
+    <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
+        Back to Deck
+    </button>
+</section>
+
+<!-- Queen of Spades Section -->
+<section id="qos-section" class="card-section">
+    <h1>Queen of Spades</h1>
+    <p>This is the placeholder content for the Queen of Spades section.</p>
+    <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
+        Back to Deck
+    </button>
+</section>
+
+<!-- Jack of Spades Section -->
+<section id="jos-section" class="card-section">
+    <h1>Jack of Spades</h1>
+    <p>This is the placeholder content for the Jack of Spades section.</p>
+    <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
+        Back to Deck
+    </button>
+</section>
+
+<!-- Ace of Hearts Section -->
+<section id="aoh-section" class="card-section">
+    <h1>Ace of Hearts</h1>
+    <p>This is the placeholder content for the Ace of Hearts section.</p>
+    <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
+        Back to Deck
+    </button>
+</section>
+
+<!-- King of Hearts Section -->
+<section id="koh-section" class="card-section" style="width: 90%; max-width: 800px; margin: auto; display: none; flex-direction: column; gap: 10px; align-items: center;">
+    <h1>Design Section</h1>
+    <h3>Posters and Mock Newspapers Designed by Me</h3>
+    <iframe src="Designpage/French Punducherry News Paper.pdf" style="height: 900px;" width="100%"></iframe>
+    <iframe src="Designpage/Scribus.pdf" style="height: 900px;" width="100%"></iframe>
+    <img src="Designpage/KB.png" style="height: 700px;" width="500px">
+    <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
+        Back to Deck
+    </button>
+</section>
+
+<!-- Queen of Hearts Section -->
+<section id="qoh-section" class="card-section">
+    <h1>Queen of Hearts</h1>
+    <p>This is the placeholder content for the Queen of Hearts section.</p>
+    <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
+        Back to Deck
+    </button>
+</section>
+
+<!-- Jack of Hearts Section -->
+<section id="joh-section" class="card-section">
+    <h1>Jack of Hearts</h1>
+    <p>This is the placeholder content for the Jack of Hearts section.</p>
+    <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
+        Back to Deck
+    </button>
+</section>
+
+<!-- Ace of Clubs Section -->
+<section id="aoc-section" class="card-section">
+    <h1>Ace of Clubs</h1>
+    <p>This is the placeholder content for the Ace of Clubs section.</p>
+    <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
+        Back to Deck
+    </button>
+</section>
+
+<!-- King of Clubs Section -->
+<section id="koc-section" class="card-section">
+    <h1>King of Clubs</h1>
+    <p>This is the placeholder content for the King of Clubs section.</p>
+    <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
+        Back to Deck
+    </button>
+</section>
+
+<!-- Queen of Clubs Section -->
+<section id="qoc-section" class="card-section">
+    <h1>Queen of Clubs</h1>
+    <p>This is the placeholder content for the Queen of Clubs section.</p>
+    <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
+        Back to Deck
+    </button>
+</section>
+
+<!-- Jack of Clubs Section -->
+<section id="joc-section" class="card-section">
+    <h1>Jack of Clubs</h1>
+    <p>This is the placeholder content for the Jack of Clubs section.</p>
+    <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
+        Back to Deck
+    </button>
+</section>
+
+<!-- Ace of Diamonds Section -->
+<section id="aod-section" class="card-section">
+    <h1>Ace of Diamonds</h1>
+    <p>This is the placeholder content for the Ace of Diamonds section.</p>
+    <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
+        Back to Deck
+    </button>
+</section>
+
+<!-- King of Diamonds Section -->
+<section id="kod-section" class="card-section">
+    <h1>King of Diamonds</h1>
+    <p>This is the placeholder content for the King of Diamonds section.</p>
+    <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
+        Back to Deck
+    </button>
+</section>
+
+<!-- Queen of Diamonds Section -->
+<section id="qod-section" class="card-section">
+    <h1>Queen of Diamonds</h1>
+    <p>This is the placeholder content for the Queen of Diamonds section.</p>
+    <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
+        Back to Deck
+    </button>
+</section>
+
+<!-- Jack of Diamonds Section -->
+<section id="jod-section" class="card-section">
+    <h1>Jack of Diamonds</h1>
+    <p>This is the placeholder content for the Jack of Diamonds section.</p>
+    <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
+        Back to Deck
+    </button>
+</section>
 
 <script>
     document.getElementById("enterButton").addEventListener("click", function() {
@@ -225,10 +375,29 @@ section object {
         document.getElementById("nextSection").scrollIntoView({ behavior: "smooth" });
     });
 
+    document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("click", function() {
+        let cardType = this.getAttribute("data-card");
+
+        // Special case for King of Clubs (koc) to open "design" section
+        let sectionId = (cardType === "koc") ? "design" : cardType + "-section";
+
+        // Hide all sections first
+        document.querySelectorAll(".card-section").forEach(section => {
+            section.style.display = "none";
+        });
+
+        // Show the relevant section
+        let targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            targetSection.style.display = "block";
+            targetSection.scrollIntoView({ behavior: "smooth" });
+        }
+    });
+});
+   
    
 </script>
 
 </body>
 </html>
-
-
