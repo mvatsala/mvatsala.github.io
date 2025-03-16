@@ -70,10 +70,11 @@
         }
 
         .deck {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns */
             gap: 20px;
+            justify-content: center;
+            align-items: center;
         }
 
         .card {
@@ -99,6 +100,36 @@
         }
         .card-face {
     font-family: 'Felipa', serif;
+.}
+
+/* Tooltip Styles */
+.sidebar-item {
+    position: relative;
+    display: inline-block;
+}
+
+.sidebar-item .tooltip {
+    visibility: hidden;
+    width: max-content;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+}
+
+.sidebar-item:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0.3s;
 }
 
         .front {
@@ -122,10 +153,157 @@ section object {
     display: block;
     margin: 0 auto; /* Ensures full center alignment */
 }
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden */
+    width: 250px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 3000; /* Ensures it is above other elements */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px; /* Adjusted so first item isn't behind menu */
+    transition: left 0.3s ease-in-out;
+    overflow-y: auto; /* Allows scrolling */
+}
+        .sidebar.open {
+            left: 0; /* Slide in when opened */
+        }
+
+.sidebar img {
+    width: 50px;
+    height: 75px; /* Miniature size */
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 2px solid white;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar img:hover {
+    transform: scale(1.1);
+}
+
+        /* Card Flip Effect */
+        .card {
+            width: 200px;
+            height: 300px;
+            position: relative;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        .card:hover .card-back {
+            opacity: 0.8;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+            transform: scale(1.05);
+            transition: transform 0.2s ease-in-out;
+            cursor: pointer;
+        }
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 8px;
+}
+
+        .card-back {
+            transform: rotateY(180deg);
+            cursor: pointer;
+        }
+
+        /* Fixed position for the menu button */
+        #menu-btn {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 18px;
+            padding: 12px 24px;
+            background-color: #3a2a1c;
+            color: #f8e1c4;
+            border: 2px solid #f8e1c4;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            z-index: 1000;
+        }
+
+        .card:hover .card-back {
+            opacity: 0.8;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+        }
+        
+        #menu-btn:hover {
+            background-color: #f8e1c4;
+            color: #3a2a1c;
+            transform: scale(1.1);
+        }
+
+        /* Styles for the menu button matching the enter button */
+        #menuButton {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 18px;
+            padding: 12px 24px;
+            background-color: #3a2a1c;
+            color: #f8e1c4;
+            border: 2px solid #f8e1c4;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            margin-top: 30px;
+        }
+
+        #menuButton:hover {
+            background-color: #f8e1c4;
+            color: #3a2a1c;
+            transform: scale(1.1);
+        }
+        .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.card:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+}
+#close-sidebar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+#close-sidebar:hover {
+    color: red;
+}
+
     </style>
 </head>
 <body>
-
+<button id="menu-btn">☰ Menu</button>
+ 
 <div class="intro-box">
     <h1> Hi, this is Vatsala.<br> Welcome to my World!</h1>
     <button id="enterButton">Enter</button>
@@ -135,6 +313,77 @@ section object {
     <h1> Life is like a game of cards... Hence, my portfolio is presented as a deck of cards! </h1>
     <button id="nextSectionButton">That's so cool!</button>
 </section>
+
+<div class="sidebar">
+    <button id="close-sidebar">✖</button>
+    <div class="sidebar-item">
+        <img src="deck/AoS.png" data-card="aos" data-face="deck/AoS.png" data-title="Ace of Spades: Storytelling" alt="Ace of Spades">
+        <span class="tooltip">Ace of Spades: Storytelling</span>
+    </div>
+    <div class="sidebar-item">
+        <img src="deck/KoS.png" data-card="kos" data-face="deck/KoS.png" data-title="King of Spades: Data Analysis" alt="King of Spades">
+        <span class="tooltip">King of Spades: Data Analysis</span>
+    </div>
+    <div class="sidebar-item">
+        <img src="deck/QoS.png" data-card="qos" data-face="deck/QoS.png" data-title="Queen of Spades: Professional Writing" alt="Queen of Spades">
+        <span class="tooltip">Queen of Spades: Professional Writing</span>
+    </div>
+    <div class="sidebar-item">
+        <img src="deck/JoS.png" data-card="jos" data-face="deck/JoS.png" data-title="Jack of Spades: Journalism" alt="Jack of Spades">
+        <span class="tooltip">Jack of Spades: Journalism</span>
+    </div>
+
+    <div class="sidebar-item">
+        <img src="deck/AoH.png" data-card="aoh" data-face="deck/AoH.png" data-title="Ace of Hearts: Poetry and Prose" alt="Ace of Hearts">
+        <span class="tooltip">Ace of Hearts: Poetry and Prose</span>
+    </div>
+    <div class="sidebar-item">
+        <img src="deck/KoH.png" data-card="koh" data-face="deck/KoH.png" data-title="King of Hearts: Design" alt="King of Hearts">
+        <span class="tooltip">King of Hearts: Design</span>
+    </div>
+    <div class="sidebar-item">
+        <img src="deck/QoH.png" data-card="qoh" data-face="deck/QoH.png" data-title="Queen of Hearts: Voice Over" alt="Queen of Hearts">
+        <span class="tooltip">Queen of Hearts: Voice Over</span>
+    </div>
+    <div class="sidebar-item">
+        <img src="deck/JoH.png" data-card="joh" data-face="deck/JoH.png" data-title="Jack of Hearts: Photo and Editing" alt="Jack of Hearts">
+        <span class="tooltip">Jack of Hearts: Photo and Editing</span>
+    </div>
+
+    <div class="sidebar-item">
+        <img src="deck/AoC.png" data-card="aoc" data-face="deck/AoC.png" data-title="Ace of Clubs: Web Design" alt="Ace of Clubs">
+        <span class="tooltip">Ace of Clubs: Web Design</span>
+    </div>
+    <div class="sidebar-item">
+        <img src="deck/KoC.png" data-card="koc" data-face="deck/KoC.png" data-title="King of Clubs: Coding" alt="King of Clubs">
+        <span class="tooltip">King of Clubs: Coding</span>
+    </div>
+    <div class="sidebar-item">
+        <img src="deck/QoC.png" data-card="qoc" data-face="deck/QoC.png" data-title="Queen of Clubs: CV and LORs" alt="Queen of Clubs">
+        <span class="tooltip">Queen of Clubs: CV and LORs</span>
+    </div>
+    <div class="sidebar-item">
+        <img src="deck/JoC.png" data-card="joc" data-face="deck/JoC.png" data-title="Jack of Clubs: Self Learning" alt="Jack of Clubs">
+        <span class="tooltip">Jack of Clubs: Self Learning</span>
+    </div>
+
+    <div class="sidebar-item">
+        <img src="deck/AoD.png" data-card="aod" data-face="deck/AoD.png" data-title="Ace of Diamonds: Hobbies and Interests" alt="Ace of Diamonds">
+        <span class="tooltip">Ace of Diamonds: Hobbies and Interests</span>
+    </div>
+    <div class="sidebar-item">
+        <img src="deck/KoD.png" data-card="kod" data-face="deck/KoD.png" data-title="King of Diamonds: Teamwork" alt="King of Diamonds">
+        <span class="tooltip">King of Diamonds: Teamwork</span>
+    </div>
+    <div class="sidebar-item">
+        <img src="deck/QoD.png" data-card="qod" data-face="deck/QoD.png" data-title="Queen of Diamonds: Leadership" alt="Queen of Diamonds">
+        <span class="tooltip">Queen of Diamonds: Leadership</span>
+    </div>
+    <div class="sidebar-item">
+        <img src="deck/JoD.png" data-card="jod" data-face="deck/JoD.png" data-title="Jack of Diamonds: Miscellaneous" alt="Jack of Diamonds">
+        <span class="tooltip">Jack of Diamonds: Miscellaneous</span>
+    </div>
+</div>
 
 <section id="nextSection">
     <div id="deck" class="deck">
@@ -373,21 +622,57 @@ section object {
     document.getElementById("nextSectionButton").addEventListener("click", function() {
         document.getElementById("nextSection").style.display = "block";
         document.getElementById("nextSection").scrollIntoView({ behavior: "smooth" });
+        // Reset all cards: store original front face if not stored, mark as unclicked, and show back
+        document.querySelectorAll(".card").forEach(card => {
+            let frontImg = card.querySelector(".card-face.front");
+            if (!card.dataset.face) {
+                card.dataset.face = frontImg.getAttribute("src");
+            }
+            card.dataset.clicked = "false";
+            card.querySelectorAll("img").forEach(img => {
+                img.src = "deck/CB.png";
+            });
+        });
     });
 
     document.querySelectorAll(".card").forEach(card => {
-    card.addEventListener("click", function() {
+        card.addEventListener("click", function() {
+            if (this.dataset.clicked === "true") {
+                // Second click: navigate to linked section
+                let cardType = this.getAttribute("data-card");
+                let sectionId = (cardType === "koc") ? "koc-section" : cardType + "-section";
+
+                // Hide all sections first
+                document.querySelectorAll(".card-section").forEach(section => {
+                    section.style.display = "none";
+                });
+
+                // Show the relevant section
+                let targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    targetSection.style.display = "block";
+                    targetSection.scrollIntoView({ behavior: "smooth" });
+                }
+            } else {
+                // First click: flip the card to reveal its front face
+                this.dataset.clicked = "true";
+                let frontImg = this.querySelector(".card-face.front");
+                frontImg.src = this.dataset.face;
+            }
+        });
+    });
+document.getElementById("menu-btn").addEventListener("click", function() {
+    document.querySelector(".sidebar").classList.toggle("open");
+});
+// Add sidebar image click interactions to navigate to corresponding sections
+document.querySelectorAll(".sidebar img").forEach(img => {
+    img.addEventListener("click", function() {
         let cardType = this.getAttribute("data-card");
-
-        // Special case for King of Clubs (koc) to open "design" section
-        let sectionId = (cardType === "koc") ? "design" : cardType + "-section";
-
+        let sectionId = cardType + "-section";
         // Hide all sections first
         document.querySelectorAll(".card-section").forEach(section => {
             section.style.display = "none";
         });
-
-        // Show the relevant section
         let targetSection = document.getElementById(sectionId);
         if (targetSection) {
             targetSection.style.display = "block";
@@ -395,9 +680,12 @@ section object {
         }
     });
 });
-   
+document.getElementById("close-sidebar").addEventListener("click", function() {
+    document.querySelector(".sidebar").classList.remove("open");
+});
    
 </script>
 
 </body>
 </html>
+
