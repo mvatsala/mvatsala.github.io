@@ -16,7 +16,7 @@
         }
 
         body {
-            font-family: 'Felipa', serif;
+            font-family: 'Cinzel Decorative', serif;
             background-image: url('ptbg.jpeg'); 
             background-size: cover;
             background-position: center;
@@ -25,8 +25,10 @@
             padding: 0;
         }
 
+        
+
         .intro-box {
-            font-family: 'Cinzel Decorative', serif;
+            font-family:'Felipa', serif ;
             width: 60%;
             margin: 200px auto;
             padding: 20px;
@@ -299,9 +301,84 @@ section object {
     color: red;
 }
 
+.photo-frame {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.photo-frame img {
+    width: 400px;
+    height: 500px;
+}
+.fixed-icon {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 50px; /* Chhota square */
+            height: 50px;
+        }
+
+        /* Dropdown menu styling */
+        .dropdown {
+            position: fixed;
+            top: 10px;
+            right: 70px; 
+        }
+
+        .dropbtn {
+            background-color: #3a2a1c;
+            color: #f8e1c4;
+            border: 2px solid #f8e1c4;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 0px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #3a2a1c;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
     </style>
 </head>
 <body>
+    
+ 
+   
+   <!-- CB.png Image (Fixed Position) -->
+   <img src="deck/CB.png" alt="CB Icon" class="fixed-icon" style="width: 100px; height: 100px;">
+
+   <!-- Contact Dropdown -->
+   <div class="dropdown">
+       <button class="dropbtn" style="margin-right: 100px;">Contact</button>
+       <div class="dropdown-content">
+           <a href="mailto:vatsala.m2003@gmail.com">📧 Email</a>
+           <a href="https://www.linkedin.com/in/vatsala-mishra-5532191ba/" target="_blank">🔗 LinkedIn</a>
+           <a href="https://www.instagram.com/vatsala.m04?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">📷 Instagram</a>
+       </div>
+   </div>
+
 <button id="menu-btn">☰ Menu</button>
  
 <div class="intro-box">
@@ -310,6 +387,7 @@ section object {
 </div>
 
 <section id="secondPage">
+    <h1>In a game of cards your skills and intellect is crucial, but so is Luck that decides, what cards you are dealt.</h1> <br>
     <h1> Life is like a game of cards... Hence, my portfolio is presented as a deck of cards! </h1>
     <button id="nextSectionButton">That's so cool!</button>
 </section>
@@ -346,8 +424,10 @@ section object {
         <span class="tooltip">Queen of Hearts: Voice Over</span>
     </div>
     <div class="sidebar-item">
+        <a href="#joh-section">
         <img src="deck/JoH.png" data-card="joh" data-face="deck/JoH.png" data-title="Jack of Hearts: Photo and Editing" alt="Jack of Hearts">
         <span class="tooltip">Jack of Hearts: Photo and Editing</span>
+    </a>
     </div>
 
     <div class="sidebar-item">
@@ -380,8 +460,8 @@ section object {
         <span class="tooltip">Queen of Diamonds: Leadership</span>
     </div>
     <div class="sidebar-item">
-        <img src="deck/JoD.png" data-card="jod" data-face="deck/JoD.png" data-title="Jack of Diamonds: Miscellaneous" alt="Jack of Diamonds">
-        <span class="tooltip">Jack of Diamonds: Miscellaneous</span>
+        <img src="deck/JoD.png" data-card="jod" data-face="JoD.png" data-title="Jack of Diamonds: My Journey (About Me)" alt="Jack of Diamonds">
+        <span class="tooltip">Jack of Diamonds: My Journey (About Me) </span>
     </div>
 </div>
 
@@ -421,6 +501,7 @@ section object {
             <img class="card-face front" src="deck/QoH.png" alt="Queen of Hearts">
             <img class="card-face back" src="deck/CB.png" alt="Card Back">
         </div>
+        
         <div class="card" data-card="joh">
             <img class="card-face front" src="deck/JoH.png" alt="Jack of Hearts">
             <img class="card-face back" src="deck/CB.png" alt="Card Back">
@@ -458,7 +539,7 @@ section object {
             <img class="card-face back" src="deck/CB.png" alt="Card Back">
         </div>
         <div class="card" data-card="jod">
-            <img class="card-face front" src="deck/JoD.png" alt="Jack of Diamonds">
+            <img class="card-face front" src="JoD.png" alt="Jack of Diamonds">
             <img class="card-face back" src="deck/CB.png" alt="Card Back">
         </div>
     </div>
@@ -468,8 +549,15 @@ section object {
 <!-- Ace of Spades Section -->
 
 <section id="aos-section" class="card-section">
-    <h1>Ace of Spades</h1>
-    <p>This is the placeholder content for the Ace of Spades section.</p>
+    <h1>Storytelling</h1>
+    <h3>Ace of Spades</h3>
+    <p>
+
+        Storytelling is my strongest suit—the Ace of Spades in my deck of skills. It brings together all my diverse abilities, shaping the way I analyze data, craft compelling narratives, design visuals, and communicate ideas. Whether in journalism, writing, coding, or data analysis, storytelling is at the heart of everything I do.
+        
+        This portfolio itself reflects that philosophy. Every section, every skill, and every design choice is part of a larger narrative—structured like a deck of cards, each one revealing a different facet of my expertise. Just as the Ace of Spades is the most defining card, storytelling is the unifying force behind my professional and creative identity.
+        
+        And so does the work displayed in successive sections. From uncovering insights in data to designing intuitive experiences, from impactful writing to seamless communication, storytelling ties it all together—giving purpose, structure, and meaning to my work.</p>
     <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
         Back to Deck
     </button>
@@ -477,8 +565,12 @@ section object {
 
 <!-- King of Spades Section -->
 <section id="kos-section" class="card-section">
-    <h1>King of Spades</h1>
-    <p>This is the placeholder content for the King of Spades section.</p>
+    <h1>Data Analysis</h1>
+    <h3>King of Spades</h3>
+    <p>
+    Here is a data story created by me that entailed extensive Data Analysis
+    <iframe src="https://inspiring-valkyrie-cd3deb.netlify.app" style="height: 900px;" width="100%"></iframe>
+    </p>
     <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
         Back to Deck
     </button>
@@ -486,8 +578,13 @@ section object {
 
 <!-- Queen of Spades Section -->
 <section id="qos-section" class="card-section">
-    <h1>Queen of Spades</h1>
-    <p>This is the placeholder content for the Queen of Spades section.</p>
+    <h1>Research</h1>
+    <h3>Queen of Spades</h3>
+    <br>
+    <p>Paper Presentation Certificates
+        <img src="Research/GenderC.jpg"> <br>
+        <img src="Research/Wrld cup.jpg">
+    </p>
     <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
         Back to Deck
     </button>
@@ -495,8 +592,15 @@ section object {
 
 <!-- Jack of Spades Section -->
 <section id="jos-section" class="card-section">
-    <h1>Jack of Spades</h1>
-    <p>This is the placeholder content for the Jack of Spades section.</p>
+    <h1>Journalism</h1>
+    <h3>Jake of Spades</h3>
+    <p>Bylines and certificate from The Times of India.
+        <img src="jrnlsm/1.png"> <br>
+        <img src="jrnlsm/2.png"> <br>
+        <img src="jrnlsm/3.png"> <br>
+        <img src="jrnlsm/4.png"> <br>
+        <img src="jrnlsm/crt.png"> <br>
+    </p>
     <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
         Back to Deck
     </button>
@@ -504,8 +608,25 @@ section object {
 
 <!-- Ace of Hearts Section -->
 <section id="aoh-section" class="card-section">
-    <h1>Ace of Hearts</h1>
-    <p>This is the placeholder content for the Ace of Hearts section.</p>
+    <h1>Poetry and Prose</h1>
+    <h3>Ace of Hearts</h3>
+    <p>Poetry is closest to my heart. It opens up doors to a realm of emotion and shuts down reality. It is my escape. Which is why my favourite poem by myself is 
+        <br>
+        <br>
+        
+   
+     <img src="Muse.jpg">
+<br>
+
+     <a href="https://www.amazon.in/Muse-Hidden-hearts-Expressed-words/dp/B08J43WFNG" 
+     style="display: inline-block; padding: 12px 24px; font-size: 18px; font-weight: bold; 
+            color: white; background-color: #ff9900; border: none; border-radius: 8px; 
+            text-decoration: none; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+            text-align: center; cursor: pointer;">
+      Buy on Amazon
+  </a>
+   
+    </p>
     <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
         Back to Deck
     </button>
@@ -514,9 +635,10 @@ section object {
 <!-- King of Hearts Section -->
 <section id="koh-section" class="card-section" style="width: 90%; max-width: 800px; margin: auto; display: none; flex-direction: column; gap: 10px; align-items: center;">
     <h1>Design Section</h1>
+    <h2>King of Hearts</h2>
     <h3>Posters and Mock Newspapers Designed by Me</h3>
-    <iframe src="Designpage/French Punducherry News Paper.pdf" style="height: 900px;" width="100%"></iframe>
-    <iframe src="Designpage/Scribus.pdf" style="height: 900px;" width="100%"></iframe>
+    <iframe src="Designpage/French Punducherry News Paper.pdf" style="height: 500px;" width="300px"></iframe>
+    <iframe src="Designpage/Scribus.pdf" style="height: 500px;" width="300px"></iframe>
     <img src="Designpage/KB.png" style="height: 700px;" width="500px">
     <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
         Back to Deck
@@ -525,8 +647,19 @@ section object {
 
 <!-- Queen of Hearts Section -->
 <section id="qoh-section" class="card-section">
-    <h1>Queen of Hearts</h1>
-    <p>This is the placeholder content for the Queen of Hearts section.</p>
+<h1>Voice Over</h1>
+    <h3>Queen of Hearts</h3>
+    <p>Voice Overs For Radio Mirchi 98.3
+        <video class="voiceover-video" controls>
+            <source src="VO/MirchiVO2.mp4" type="video/mp4">
+        </video>
+        <br>
+        <video class="voiceover-video" controls>
+            <source src="VO/Mirchivo.mp4" type="video/mp4">
+        </video>
+</p>
+Other Voice Overs
+<iframe src="https://youtu.be/RE6AqF01Wq4?si=j7cTQuNSL9xCKuTo"></iframe>
     <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
         Back to Deck
     </button>
@@ -534,8 +667,14 @@ section object {
 
 <!-- Jack of Hearts Section -->
 <section id="joh-section" class="card-section">
-    <h1>Jack of Hearts</h1>
-    <p>This is the placeholder content for the Jack of Hearts section.</p>
+
+    <h1>Photography and AV Editing</h1>
+    <h3>Jack of Hearts</h3>
+     <iframe width="300" height="500" src="Photography Portfolio_compressed (1).pdf" frameborder="0" allowfullscreen></iframe> <br>
+        <iframe width="300" height="500" src="https://www.youtube.com/embed/EJV8q1ujkc4" frameborder="0" allowfullscreen></iframe><br>
+        <iframe width="300" height="500" src="https://www.youtube.com/embed/QMFyfzurZNw" frameborder="0" allowfullscreen></iframe><br>
+        <iframe width="300" height="500" src="https://www.youtube.com/embed/30amxXQkUAM" frameborder="0" allowfullscreen></iframe><br>
+    
     <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
         Back to Deck
     </button>
@@ -543,8 +682,9 @@ section object {
 
 <!-- Ace of Clubs Section -->
 <section id="aoc-section" class="card-section">
-    <h1>Ace of Clubs</h1>
-    <p>This is the placeholder content for the Ace of Clubs section.</p>
+    <h1>Web Design</h1>
+    <h2>Ace of Clubs</h2>
+    <p>Exemplifying my Web Designing skills, I present this website, which I created using HTML and Java Script. Everything from the card backs, logo, the buttons, sidebar has been designed by me. The website is hosted on Git Hub.</p>
     <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
         Back to Deck
     </button>
@@ -552,8 +692,9 @@ section object {
 
 <!-- King of Clubs Section -->
 <section id="koc-section" class="card-section">
-    <h1>King of Clubs</h1>
-    <p>This is the placeholder content for the King of Clubs section.</p>
+    <h1>Coding</h1>
+    <h3>King of Clubs</h3>
+    <p>This website was created using Java Script and HTML. The story in data analysis section required Data Analysis using SQL and Python Pandas. I am familiar with python modules such as pandas, matplotlib etc.</p>
     <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
         Back to Deck
     </button>
@@ -561,8 +702,16 @@ section object {
 
 <!-- Queen of Clubs Section -->
 <section id="qoc-section" class="card-section">
-    <h1>Queen of Clubs</h1>
-    <p>This is the placeholder content for the Queen of Clubs section.</p>
+    <h1>CV and LORs</h1>
+    <h3>Queen of Clubs</h3>
+    <p>CV
+       <img src="CV_page-0001.jpg" >
+        </p>
+        <p>
+        <br>
+        LORs
+        <img src="CVLOR/PCVN.JPG">
+    </p>
     <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
         Back to Deck
     </button>
@@ -570,8 +719,17 @@ section object {
 
 <!-- Jack of Clubs Section -->
 <section id="joc-section" class="card-section">
-    <h1>Jack of Clubs</h1>
-    <p>This is the placeholder content for the Jack of Clubs section.</p>
+
+    <h1>Self Learning</h1>
+    <h3>Jack of Clubs</h3>
+
+    <p>
+        Here are Certifications that I utilised to upskill myself through self learning
+        <img src="cert/nlp.png"> <br>
+        <img src="cert/py.jpeg"> <br>
+        <img src="cert/Sql.jpg"> <br>
+        <img src="cert/xl.jpeg"> <br>
+    </p>
     <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
         Back to Deck
     </button>
@@ -579,8 +737,13 @@ section object {
 
 <!-- Ace of Diamonds Section -->
 <section id="aod-section" class="card-section">
-    <h1>Ace of Diamonds</h1>
-    <p>This is the placeholder content for the Ace of Diamonds section.</p>
+    <h1>Hobbies</h1>
+    <h3>Ace of Diamonds</h3>
+    <p>Apart from writing and coding, I love cooking, listening to music and reading</p>
+    Oh! and I love doing time pass with AI! <br>
+    <img src="MEA.png" style=" height: 400px; width: 400px;">
+    <h6>Marx eating 'Apple': An Image I created using AI</h6>
+   
     <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
         Back to Deck
     </button>
@@ -588,8 +751,16 @@ section object {
 
 <!-- King of Diamonds Section -->
 <section id="kod-section" class="card-section">
-    <h1>King of Diamonds</h1>
-    <p>This is the placeholder content for the King of Diamonds section.</p>
+    <h1>Team Work</h1>
+    <h3>King of Diamonds</h3>
+    <p>Few Group projects
+        <img src="ss.png" >
+        Stall put up by students as a group, as a part of our Bachelor's Program
+<br>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/k6jkKroqVF0?si=0Pois8DiMBlUPcnl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        Video Submission, Group Assignmnetas a part of our Bachelor's Program
+    </p>
     <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
         Back to Deck
     </button>
@@ -597,21 +768,32 @@ section object {
 
 <!-- Queen of Diamonds Section -->
 <section id="qod-section" class="card-section">
-    <h1>Queen of Diamonds</h1>
-    <p>This is the placeholder content for the Queen of Diamonds section.</p>
-    <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
+    <h1>Leadership</h1>
+    <h3>Queen of Diamonds</h3>
+    <p> <img src="sh.jpg" alt=""></p>
+    <h5>courtsey: mesta_bgr</h5>
+    As the co-student representative of the Press Club, MESTA, (Media Studies Association), The Department of Media Studies, CHRIST (Deemed to be University), Bannerghatta Road Campus Bangalore, I have lead a group of volunteers, conducting workshops on report writing, assigning tasks such as reporting, photography etc, overseeing coverage of events conducted by the department and designing department level magazines.
+   <br> <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
         Back to Deck
     </button>
 </section>
 
 <!-- Jack of Diamonds Section -->
 <section id="jod-section" class="card-section">
-    <h1>Jack of Diamonds</h1>
-    <p>This is the placeholder content for the Jack of Diamonds section.</p>
+    <h1>My Journey - About Me</h1>
+    <h3>Jake of Diamonds</h3>
+    <div class="photo-frame">
+        <img src="me.jpg" alt="Me">
+        <img src="cnb.jpg" alt="CNB">
+    </div>
+    <p><i>'Mai Kaafi Akeli Hu se, Mai akeli kaafi hu tak'</i> this journey has been enthrallig. From trying to fit in, I learned to stand out, from craving validation to enjoying myself, I come so much closer to myself! They say you can take a Kanpuriya out from Kanpur but you cannot take the Kanpur out from a Kanpuriya. I have learnt to be the perfect mix of sweet and salty just like my Kanpur!</p> <br>
     <button onclick="document.getElementById('nextSection').scrollIntoView({ behavior: 'smooth' });">
         Back to Deck
-    </button>
+    </button>  
 </section>
+
+
+</body>
 
 <script>
     document.getElementById("enterButton").addEventListener("click", function() {
@@ -683,9 +865,10 @@ document.querySelectorAll(".sidebar img").forEach(img => {
 document.getElementById("close-sidebar").addEventListener("click", function() {
     document.querySelector(".sidebar").classList.remove("open");
 });
-   
+
+
+
 </script>
 
 </body>
 </html>
-
