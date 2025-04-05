@@ -803,30 +803,6 @@ Other Voice Overs
     </button>  
 </section>
 
-    <!-- Form that sends submissions to your email -->
-    <form action="https://formsubmit.co/vatsala.m2003@gmail.com" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-
-        <label for="name" style="font-weight: bold; font-family: Arial, sans-serif;">Name:</label>
-        <input type="text" id="name" name="name" required 
-            style="width: 100%; padding: 8px; margin: 5px 0 10px; border: 1px solid #ccc; border-radius: 5px;">
-
-        <label for="designation" style="font-weight: bold; font-family: Arial, sans-serif;">Designation:</label>
-        <input type="text" id="designation" name="designation" required 
-            style="width: 100%; padding: 8px; margin: 5px 0 10px; border: 1px solid #ccc; border-radius: 5px;">
-
-        <label for="organisation" style="font-weight: bold; font-family: Arial, sans-serif;">Organisation:</label>
-        <input type="text" id="organisation" name="organisation" required 
-            style="width: 100%; padding: 8px; margin: 5px 0 10px; border: 1px solid #ccc; border-radius: 5px;">
-
-        <button type="submit" 
-            style="background: #007BFF; color: white; border: none; padding: 10px; width: 100%; 
-            cursor: pointer; border-radius: 5px; font-size: 16px;">
-            Submit
-        </button>
-    </form>
-</div>
-
 </body>
 
 <script>
@@ -900,17 +876,6 @@ document.getElementById("close-sidebar").addEventListener("click", function() {
     document.querySelector(".sidebar").classList.remove("open");
 });
 
-
-    document.getElementById("query-btn").addEventListener("click", function() {
-        let formSection = document.getElementById("queryFormSection");
-        
-        if (formSection.style.display === "none") {
-            formSection.style.display = "block"; 
-            formSection.scrollIntoView({ behavior: "smooth" }); 
-        } else {
-            formSection.style.display = "none";  
-        }
-    });
 
 
 </script>
